@@ -26,6 +26,10 @@ body {
     width: 75%;
 }
 
+main {
+    padding: auto 20px;
+}
+
 footer {
     background-color: #454372;
     text-align: center;
