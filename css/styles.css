@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro&display=swap');
+
+/*Color scheme:
+main: #454372
+accent: #efbc9b
+text: white
+links: #454372, hover is accent?
+*/
+
+header {
+    text-align: center;
+    background-color: #efbc9b;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer {
+    background-color: #454372;
+    text-align: center;
+    color: white;
+}
