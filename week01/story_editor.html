@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>Story Editor</title>
+
+  <script>
+      function loadStory(){
+        var storyName = document.getElementById("name").value
+        var storyHTML = localStorage.getItem(storyName)
+        document.getElementById("story_editor").value = storyHTML
+      }
+      function saveStory(){
+        var storyName = document.getElementById("name_input").value
+        var storyHTML = document.getElementById("story_editor").value
+        localStorage.setItem(storyName, storyHTML)
+      }
+      function displayStory(){
+        var storyHTML = document.getElementById("story_editor").value
+        document.getElementById("story_display").innerHTML = storyHTML
+      }
+  </script>
+
+  <style>
+      textarea {
+          width: 800px;
+          height: 250px;
+          background-color: aliceblue;
+      }
+  </style>
+</head>
+
+<header>
+    <h1>Story Editor</h1>
+</header>
+
+<body>
+	Story Name:<input id="name"></input>
+    <section id="buttons">
+        <button onclick="loadStory()">Find and Edit</button>
+        <button onclick="saveStory()">Save</button>
+        <button onclick="displayStory()">Display</button>
+    </section>
+    <textarea id="story_editor" placeholder="Write an awesome story here!"></textarea>
+
+    <section id="story_display"></section>
+</body>
+</html>
