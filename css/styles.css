@@ -27,7 +27,8 @@ body {
 }
 
 main {
-    padding: auto 20px;
+    margin: auto;
+    width: 85%;
 }
 
 footer {
