@@ -27,5 +27,6 @@ body {
 }
 
 main {
-    padding: auto 20px;
+    padding: 20px;
+    width: 75%;
 }
