@@ -7,7 +7,7 @@
       function loadStory(){
         var storyName = document.getElementById("name").value
         var storyHTML = localStorage.getItem(storyName)
-        document.getElementById("story_editor").innerHTML = storyHTML //change this back to .value if this doesn't work//
+        document.getElementById("story_editor").innerHTML = storyHTML
       }
       function saveStory(){
         var storyName = document.getElementById("name").value
@@ -16,7 +16,7 @@
       }
       function displayStory(){
         var storyHTML = document.getElementById("story_editor").value
-        document.getElementById("story_display").innerHTML = storyName + storyHTML
+        document.getElementById("story_display").innerHTML = storyHTML
       }
   </script>
 
