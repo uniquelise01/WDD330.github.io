@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Activity</title>
+
+    <script>
+        
+        //function takes input number and adds its lower
+        function functionOne(){
+            var x = parseInt(document.getElementById("user_input").value)
+            var n = 0
+
+            if (isNaN(x)){
+                document.getElementById("display").innerHTML = "Please enter a number."
+            }
+
+            else {
+                for (let i = 0; i <= x; i++){
+                    n += i
+                }
+                document.getElementById("display").innerHTML = n
+            }
+        }
+
+        //function that adds multiple numbers
+        function functionTwo(){
+            var x = parseInt(document.getElementById("user_input").value)
+            var y = parseInt(document.getElementById("add_input").value)
+            
+            if(isNaN(y)){
+                document.getElementById("result").innerHTML = "Please enter a number."
+            }
+
+            else if(isNaN(x)){
+                document.getElementById("display").innerHTML = "Please enter a number here."
+            }
+
+            else {
+                let w = x + y
+                document.getElementById("result").innerHTML = w
+                document.getElementById("display").innerHTML = ""
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: lightsalmon;
+            padding: 20px;
+        }
+
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+
+        div {
+            height: 10px;
+            margin: 5px;
+        }
+
+        textarea {
+            height: 20px;
+            width: 200px;
+            box-shadow: 0 0 5px #666666 inset;
+            border-radius: 5px;
+            text-indent: 5px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Group Activity</h1>
+    <p>Learn the summation of one number!</p>
+    <textarea id="user_input" placeholder="Enter a number!"></textarea>
+    <button onclick="functionOne()">Submit</button>
+    <div id="display"></div>
+
+    <p>Add the sum of the first number with a new number!</p>
+    <textarea id="add_input" placeholder="Enter another number!"></textarea>
+    <button onclick="functionTwo()">Submit</button>
+    <div id="result"></div>
+</body>
+</html>
