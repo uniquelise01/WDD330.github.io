@@ -5,35 +5,37 @@
 
   <script>
       function checkNumber(){
-        var inputNumber = document.GetElementById("name").value
+        var inputNumber = document.getElementById("name").value
         var checkNum = parseInt(inputNumber)
         if (isNaN(checkNum)) {
-            document.GetElementById("result_display").innerHTML = "Please enter a number."
+            document.getElementById("result_display").innerHTML = "Please enter a number."
         }
         else {
 
             if (inputNumber != ""){
                 var remainder = Math.abs(inputNumber % 2)
                 if (inputNumber != 0 && remainder == 0){
-                    document.GetElementById("result_display").innerHTML = inputNumber + " is even!"
+                    document.getElementById("result_display").innerHTML = inputNumber + " is even!"
                 }
                 else if (inputNumber != 0 && remainder == 1){
-                    document.GetElementById("result_display").innerHTML = inputNumber + " is odd!"
+                    document.getElementById("result_display").innerHTML = inputNumber + " is odd!"
                 }
                 else {
-                    document.GetElementById("result_display").innerHTML = "The input is neither even nor odd."
+                    document.getElementById("result_display").innerHTML = "The input is neither even nor odd."
                 }
             }
             else {
-                document.GetElementById("result_display").innerHTML = "Please enter a number."
+                document.getElementById("result_display").innerHTML = "Please enter a number."
             }
         }    
       }
   </script>
 
   <style>
-      main {
+      body {
           background-color: lightblue;
+          padding: 50px;
+
       }
 
       input {
@@ -47,15 +49,11 @@
   </style>
 </head>
 
-<main>
-    <header>
-        <h1>Extra Practice</h1>
-    </header>
+<body>
+    <h1>Extra Practice</h1>
 
-    <body>
-        Enter a number:<input id="name"></input>
-        <button onclick="checkNumber()">Check It!</button>
-        <section id="result_display"></section>
-    </body>
-</main>
+    Enter a number:<input id="name"></input>
+    <button onclick="checkNumber()">Check It!</button>
+    <section id="result_display"></section>
+</body>
 </html>
