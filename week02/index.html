@@ -24,6 +24,9 @@
             <li>I learned that through template literals, you can use the backtick character (`) instead of the quote mark to note strings. This makes it easier to add quotation marks in your strings. It also eliminates the need for + signs between strings and variables you want to insert into your code. You use curly brackets and $ instead, ex: `Hello ${name}!`</li>
             <li>I also discovered the difference between parseInt and parseFloat. ParseInt will convert a string into an integer, and return NaN if there is no number. ParseFloat will convert a string into a "floating" number, which is usually a decimal.</li>
             <li>Some useful number methods are toFixed(), where you can round something to (x) number of decimals; and toPrecision(), which rounds a number to a significant amount of figures (so large numbers go to exponential notation, etc).</li>
+            <li>I didn't know you could put differnt data types into an array. For example, you could have a number, string, and undefined data all in the same array.</li>
+            <li>I also learned some new methods you can use with arrays, like arrayName.pop(), which displays the last item in the array and then removes it from the array. Or arrayName.shift() which does the same thing to the first item in the array. There's also .push('new item') and .unshift('new item'), which add a new item to the end and beginning of the array, respectively. There's also .join() that turns all of the array items into one long string.</li>
+            <li>Use a <i>set</i> if you don't want values to be repeated. To make a set: let firstTry = new Set(). Then do firstTry.add(1) to add the number 1 to the set. Duplicate adds will be ignored, and strings will be seperated into letters and duplicate letters will be deleted. ex: let testSet = new Set('hello'). testSet = {'h', 'e', 'l', 'o'}. However, if you add each word seperately, it keeps the string together. ex: let testSet = new Set.add('hello').add('neighbor'). Note that sets don't have index numbers and they read strings and numbers, etc differently. You can convert a set into an array by doing this: let testSet = [... testArray].</li>
         </ul>
         <h2>Exercises</h2>
         <a href="e-prac.html">Extra Practice from doing_stuff_with_web_things</a><br>
@@ -32,7 +35,8 @@
         <a href="ninja-practice.html">Additional practice</a>
         <h2>Questions</h2>
         <ul>
-            <li>What's the difference between const, let, and var?</li>  
+            <li>What's the difference between const, let, and var?</li>
+            <li>How do you use the selected value of a radio button in a js funtion?</li> 
         </ul>
     </main>
 </body>

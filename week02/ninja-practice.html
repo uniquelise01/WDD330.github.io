@@ -38,6 +38,45 @@
                 document.getElementById("operators_result").innerHTML = "Uh oh, something's not right. Check to make sure you answered both of the questions."
             }
         }
+
+        //Practice with arrays
+        let colors = ['orange', 'yellow', 'green']
+        console.log(colors)
+        console.log(colors[1])
+        console.log(colors.length)
+        console.log(colors[colors.length - 1])
+
+        colors.pop()
+        console.log(colors)
+
+        colors.shift()
+        console.log(colors)
+
+        colors.push('green')
+        console.log(colors)
+
+        colors.unshift('orange')
+        console.log(colors)
+
+        colors = colors.concat['blue', 'indigo', 'violet']
+        console.log(colors)
+
+        colors = [... 'red', ... colors]
+        console.log(colors)
+
+        colors.join(' + ')
+        console.log(colors)
+
+        console.log(colors.slice(2,4)) // shows us item position 2 and item position 3)
+
+        colors.splice(0, 0, 'pink') // the first number is the index, the second number is how many items to replace, the third item is what to insert there.
+        console.log(colors)
+
+        colors.reverse()
+        console.log(colors)
+
+        colors.sort()
+        console.log(colors)
     </script>
 
     <style>
