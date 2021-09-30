@@ -38,6 +38,22 @@
             console.log(calculator.sum());
             console.log(calculator.mul());
         }
+
+    //Practice with for in loops to find all the properties of an object
+    const antman = {
+        name: 'Antman',
+        realName: 'Scott Lang',
+        city: 'San Fransisco',
+        hero: true,
+        villian: false,
+        fly(){
+            return "Up and away, Anty!"
+        }
+    }
+
+    for(const key in antman){
+        console.log(key + ": " + superman[key]);
+    }
     </script>
 
     <style>
