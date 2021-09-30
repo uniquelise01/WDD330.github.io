@@ -19,7 +19,7 @@
 
         function thisPractice() {
             let user = makeUser();
-            console.log(user.ref.name); //Should return John
+            console.log(user.ref.name); //Should return John, but it's returning ref right now ???
 
             let calculator = {
                 read() {
@@ -51,8 +51,10 @@
         }
     }
 
+    antman.allies = ['Wasp', 'Iron Man', 'Captain America'];
+
     for(const key in antman){
-        console.log(key + ": " + superman[key]);
+        console.log(key + ": " + antman[key]);
     }
     </script>
 
@@ -62,7 +64,7 @@
         }
 
         button {
-            padding: 20px;
+            margin: 20px;
         }
     </style>
 </head>
