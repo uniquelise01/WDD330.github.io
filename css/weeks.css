@@ -20,7 +20,7 @@ h1 {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
     margin-top: 50px;
     max-width: 1000px;
     width: 75%;
@@ -29,4 +29,18 @@ body {
 main {
     margin: auto;
     width: 85%;
+}
+
+#Math_table, #Math_table tr, #Math_table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 30px;
+}
+
+#Math_table {
+    margin: 15px;
+}
+
+#Math_table td {
+    padding: 5px;
 }
