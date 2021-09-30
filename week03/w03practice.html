@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 03 Practice</title>
+
+    <script>
+    //Practice with "this" method
+        function makeUser() {
+            return {
+                name: "John",
+                ref() {
+                    return this;
+                }
+            };
+        }
+
+        function thisPractice() {
+            let user = makeUser();
+            console.log(user.ref.name); //Should return John
+
+            let calculator = {
+                read() {
+                    this.a = +prompt('Pick a number for A:', 0);
+                    this.b = +prompt('Pick a number for B:', 0)
+                },
+                sum () {
+                    return this.a + this.b;
+                },
+                mul () {
+                    return this.a * this.b;
+                }
+            };
+
+            calculator.read();
+            console.log(calculator.sum());
+            console.log(calculator.mul());
+        }
+    </script>
+
+    <style>
+        p {
+            padding: 20px;
+        }
+
+        button {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Check out my console!</p>
+
+    <button onclick="thisPractice()">Click Me</button>
+</body>
+</html>
