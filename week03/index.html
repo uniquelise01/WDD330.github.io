@@ -20,7 +20,102 @@
             <li>To my understanding, object literals are objects that contain multiple values and/or functions. You can also create nested objects.</li>
             <li>It's interesting that changes to a variable assigned to an already-existing object will change bothe the object and the new variable. However, if you use primitive values, like letters, it won't do the same thing.</li>
             <li>The <i>this</i> method can sometimes confuse me, but the more I study it, the more it just seems like <i>this</i> is just referencing the original object. I could be wrong, but sometimes things are simpler than they seem.</li>
-            <li>To avoid repeating object, object literal, or function names, try using name spacing: put all of your functions and objects inside the same object literal, like <i>const myMaths = {}</i>, etc.</li>
+            <li>To avoid repeating object, object literal, or function names, try using name spacing: put all of your functions and objects inside the same object literal, like <i>const myMaths = {}</i>. Then, when called, just use <i>myMaths.square(x)</i>, etc.</li>
+            <li>JSON (JavaScript Object Notation) is a format we use to configure and serialize data, in a similar format as object literals. However, in JSON, property names need to be in double-quotes and functions are not permitted. To turn JSON into JS, use <i>.parse()</i>. To convert JS into JSON, use <i>.stringify()</i>.</li>
+            <li>There are several very useful math objects in JS. I'll put them in a table:</li> 
+            
+            <table>
+                <tr>
+                    <td>Math.PI</td>
+                    <td>Holds the value of pi</td>
+                </tr>
+                <tr>
+                    <td>Math.SQRT2</td>
+                    <td>The value of the square root of 2</td>
+                </tr>
+                <tr>
+                    <td>Math.E</td>
+                    <td>Euler's constant</td>
+                </tr>
+                <tr>
+                    <td>Math.LN10</td>
+                    <td>Natural log of 10</td>
+                </tr>
+                <tr>
+                    <td>Math.LOG10E</td>
+                    <td>Log base 10 of Euler's constant</td>
+                </tr>
+                <tr>
+                    <td>Math.abs()</td>
+                    <td>Absolute value of a number</td>
+                </tr>
+                <tr>
+                    <td>Math.ceil()</td>
+                    <td>Rounds up to the nearest integer</td>
+                </tr>
+                <tr>
+                    <td>Math.floor()</td>
+                    <td>Rounds down to the nearest integer</td>
+                </tr>
+                <tr>
+                    <td>Math.round()</td>
+                    <td>Rounds to the nearest integer</td>
+                </tr>
+                <tr>
+                    <td>Math.trunc()</td>
+                    <td>Removes the decimal of a number</td>
+                </tr>
+                <tr>
+                    <td>Math.exp()</td>
+                    <td>Raises a number to the power of Euler's constant</td>
+                </tr>
+                <tr>
+                    <td>Math.pow( , )</td>
+                    <td>Raises the first number to the power of the second number</td>
+                </tr>
+                <tr>
+                    <td>Math.sqrt()</td>
+                    <td>Returns the positive square roots</td>
+                </tr>
+                <tr>
+                    <td>Math.cbrt()</td>
+                    <td>Finds the cube root of a number</td>
+                </tr>
+                <tr>
+                    <td>Math.log()</td>
+                    <td>Returns the natural log of a number</td>
+                </tr>
+                <tr>
+                    <td>Math.max( ,...)</td>
+                    <td>Returns the maximum number you entered</td>
+                </tr>
+                <tr>
+                    <td>Math.min( ,...)</td>
+                    <td>Returns the minimum number you entered</td>
+                </tr>
+                <tr>
+                    <td>Math.sin()</td>
+                    <td>Returns the sine of an angle</td>
+                </tr>
+                <tr>
+                    <td>Math.cos()</td>
+                    <td>Returns the cosine of an angle</td>
+                </tr>
+                <tr>
+                    <td>Math.tan()</td>
+                    <td>Returns the tangent of a number</td>
+                </tr>
+                <tr>
+                    <td>Math.random()</td>
+                    <td>Generates a random number between 1 and 0.</td>
+                </tr>
+                <tr>
+                    <td>x * Math.random()</td>
+                    <td>Generates a random number between x and 0.</td>
+                </tr>
+            </table>
+            
+            <li></li>
         </ul>
 
         <h2>Exercises</h2>
@@ -30,7 +125,7 @@
 
         <h2>Questions</h2>
         <ul>
-            <li></li>
+            <li>Where does JSON come from? I still don't understand what it's used for.</li>
         </ul>
     </main>
 </body>
