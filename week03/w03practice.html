@@ -16,11 +16,11 @@
                 }
             };
         }
+        
+        let user = makeUser();
+        console.log(user.ref.name); //Should return John, but it's returning ref right now ???
 
-        function thisPractice() {
-            let user = makeUser();
-            console.log(user.ref.name); //Should return John, but it's returning ref right now ???
-
+        function thisPractice() { 
             let calculator = {
                 read() {
                     this.a = +prompt('Pick a number for A:', 0);
@@ -45,7 +45,7 @@
         realName: 'Scott Lang',
         city: 'San Fransisco',
         hero: true,
-        villian: false,
+        villain: false,
         fly(){
             return "Up and away, Anty!"
         }
