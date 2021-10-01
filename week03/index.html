@@ -116,6 +116,9 @@
             </table>
             
             <li>You can use regular expressions as a kind of "Find and replace" code. Ex: <i>const pattern = new RegExp('[a-zA-Z]+ing');</i> will return true if a word has 'ing' at the end of it.</li>
+            <li>I hadn't realized I'd been using the Document Object Model (DOM) in javascript already! I've only ever tried <i>getElementById()</i> though, and there are a few others: <i>getElementsByTagNames('li')</i> and <i>getElementsByClassName(),</i> for example. There's also <i>document.querySelector(),</i> which you can use in the same way you use css selection. So IDs would be referenced like '#bats' or classes with '.hero', etc. <i>document.querySelectorAll()</i> is used in the same way, but selects every element in the document that matches your selection.</li>
+            <li>You can access and set ids, classes, and other attributes using the following code: <i>.setAttribute('id', 'hero'), .getAttribute('class'), .className(), .classList.add(), .classList.remove(), .classList.contains(),</i> and <i>.classList.toggle().</i> That last one will add a class name if it doesn't exist, or remove it if it does.</li>
+            <li>I knew you could add text in an html element, but I didn't know you could create new elements! I learned about cool DOM js like <i>document.createElement('li'), .createTextNode('Flash'), .appendChild(), .textContent = '',</i> and more.</li>
         </ul>
 
         <h2>Exercises</h2>
