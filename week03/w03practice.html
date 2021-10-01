@@ -6,75 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 03 Practice</title>
 
-    <script>
-    //Practice with "this" method
-        function makeUser() {
-            return {
-                name: "John",
-                ref() {
-                    return this;
-                }
-            };
-        }
-        
-        let user = makeUser();
-        console.log(user.ref.name); //Should return John, but it's returning ref right now ???
-
-        function thisPractice() { 
-            let calculator = {
-                read() {
-                    this.a = +prompt('Pick a number for A:', 0);
-                    this.b = +prompt('Pick a number for B:', 0)
-                },
-                sum () {
-                    return this.a + this.b;
-                },
-                mul () {
-                    return this.a * this.b;
-                }
-            };
-
-            calculator.read();
-            console.log(calculator.sum());
-            console.log(calculator.mul());
-        }
-
-    //Practice with for in loops to find all the properties of an object
-    const antman = {
-        name: 'Antman',
-        realName: 'Scott Lang',
-        city: 'San Fransisco',
-        hero: true,
-        villain: false,
-        fly(){
-            return "Up and away, Anty!"
-        }
-    }
-
-    antman.allies = ['Wasp', 'Iron Man', 'Captain America'];
-
-    for(const key in antman){
-        console.log(key + ": " + antman[key]);
-    }
-
-    //Practice with DOMs
-    const heroes = document.getElementById('roster');
-
-    const flash = document.createElement('li');
-    flash.textContent = "Flash";
-
-    function createElement(tag, text){
-        const el = document.createElement(tag);
-        el.textContent = text;
-        return el
-    }
-
-    const aquaman = createElement('li', 'Aquaman');
-
-    heroes.appendChild(flash);
-
-    </script>
-
     <style>
         p {
             padding: 20px;
@@ -96,5 +27,75 @@
         <li class='vigilante hero' id='bats'>Batman</li>
         <li class='hero'>Wonder Woman</li>
     </ul>
+
+    <script>
+        //Practice with "this" method
+            function makeUser() {
+                return {
+                    name: "John",
+                    ref() {
+                        return this;
+                    }
+                };
+            }
+            
+            let user = makeUser();
+            console.log(user.ref.name); //Should return John, but it's returning ref right now ???
+    
+            function thisPractice() { 
+                let calculator = {
+                    read() {
+                        this.a = +prompt('Pick a number for A:', 0);
+                        this.b = +prompt('Pick a number for B:', 0)
+                    },
+                    sum () {
+                        return this.a + this.b;
+                    },
+                    mul () {
+                        return this.a * this.b;
+                    }
+                };
+    
+                calculator.read();
+                console.log(calculator.sum());
+                console.log(calculator.mul());
+            }
+    
+        //Practice with for in loops to find all the properties of an object
+        const antman = {
+            name: 'Antman',
+            realName: 'Scott Lang',
+            city: 'San Fransisco',
+            hero: true,
+            villain: false,
+            fly(){
+                return "Up and away, Anty!"
+            }
+        }
+    
+        antman.allies = ['Wasp', 'Iron Man', 'Captain America'];
+    
+        for(const key in antman){
+            console.log(key + ": " + antman[key]);
+        }
+    
+        //Practice with DOMs
+        const help = document.querySelector('#roster');
+    
+        const flash = document.createElement('li');
+        flash.textContent = "Flash";
+    
+        function createElement(tag, text){
+            const el = document.createElement(tag);
+            el.textContent = text;
+            return el
+        }
+    
+        const aquaman = createElement('li', 'Aquaman');
+    
+        help.appendChild(flash);
+    
+    </script>
+
 </body>
 </html>
