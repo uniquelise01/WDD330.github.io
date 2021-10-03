@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Events Examples</title>
+
+    <style>
+        .buttn {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: lightgray;
+            float: left;
+        }
+
+        .highlight {
+            background-color: lightseagreen;
+        }
+
+        #list {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Check out my console!</p>
+    <p id='click' class='buttn'>Click On Me</p>
+    <p id='dblclick' class='buttn'>Double Click On Me</p>
+    <p id='mouse' class='buttn'>Hover On Me</p>
+    <p id='once' class='buttn'>A One Time Thing...</p>
+    <p>
+        <a id='broken' class='buttn' href='https://sitepoint.com'>Broken Link</a>
+    </p>
+
+    <ul id='list' class='buttn'>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+
+    <script>
+        //click
+        const clickParagraph = document.getElementById('click');
+
+        clickParagraph.addEventListener('click',() => console.log('click') );
+        clickParagraph.addEventListener('mousedown',() => console.log('down') );
+        clickParagraph.addEventListener('mouseup',() => console.log('up') );
+
+        //dblclick
+        const dblclickParagraph = document.getElementById('dblclick');
+        dblclickParagraph.addEventListener('dblclick', highlight);
+
+        function highlight(event){
+            event.target.classList.toggle('highlight');
+        }
+
+        //mouseover
+        const mouseParagraph = document.getElementById('mouse');
+        mouseParagraph.addEventListener('mouseover', highlight);
+        mouseParagraph.addEventListener('mouseout', highlight);
+
+        //whenever the mouse moves over 3rd button
+        mouseParagraph.addEventListener('mousemove', () =>  console.log('You Moved!') );
+
+        //key events
+        addEventListener('keydown', highlight);
+
+        addEventListener('keyup', (event) => console.log(`You stopped pressing the key on ${new Date}`));
+
+        addEventListener('keydown', (event) => console.log(`You pressed the ${event.key} character`));
+
+        //check if c character was pressed with ctrl key
+        addEventListener('keydown', (event) => {
+            if (event.key === 'c' && event.ctrlKey) {
+                console.log('Action canceled!')
+            }
+        });
+
+        addEventListener('keypress', (event) => {
+            if (event.shiftKey) {
+                console.log('A shifty click!');
+            }
+        });
+
+        //one time event
+        const onceParagraph = document.getElementById('once');
+        onceParagraph.addEventListener('click', remove);
+
+        function remove(event) {
+            console.log('Enjoy this while it lasts!');
+            onceParagraph.style.backgroundColor = 'pink';
+            onceParagraph.removeEventListener('click', remove);
+        }
+
+        //broken link
+        const brokenLink = document.getElementById('broken');
+
+        brokenLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('Broken Link!')
+        })
+
+        //bubbling list
+        ulElement = document.getElementById('list');
+        liElement = document.getElementById('#list li');
+
+        //ulElement.addEventListener('click', (event) => console.log('Clicked on ul'));
+
+        //liElement.addEventListener('click', (event) => console.log('Clicked on li'));
+
+        //capturing list
+        //ulElement.addEventListener('click', (event) => console.log('Clicked on ul'), true);
+
+        //liElement.addEventListener('click', (event) => console.log('Clicked on li'), true);
+
+        //highlighting list items
+        ulElement.addEventListener('click', highlight);
+    </script>
+</body>
+</html>
