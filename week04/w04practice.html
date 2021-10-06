@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W04 Practice</title>
+</head>
+<body>
+    <p>Check out my console!</p>
+    <form name='search' action='/search'>
+        <input name='searchInput'>
+        <button type='submit'>Search</button>
+
+        <button type='submit'>Submit</button>
+        <input type='image' src='button.png'>
+
+        <button type='reset'>Reset</button>
+    </form>
+
+    <script>
+        const form = document.forms['search'];
+        form.addEventListener ('submit', search, false);
+
+        function search(event) {
+            alert(`You Searched for: ${input.value}`);
+            event.preventDefault();
+        }
+        
+        input.value = 'Search Here';
+        //delete the value once clicked on
+        input.addEventListener('focus', function(){
+            if (input.value==='Search Here') {
+                input.value = '' 
+            }
+        }, false);
+
+        input.addEventListener('blur', function(){
+            if(input.value === '') {
+                input.value = 'Search Here';
+            } }, false);
+
+        const [input, button] = form.elements;
+        //const input = form['searchInput'] does the same thing as above
+
+    </script>
+</body>
+</html>
