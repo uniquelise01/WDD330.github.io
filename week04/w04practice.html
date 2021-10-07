@@ -13,11 +13,13 @@
         <button type='submit'>Search</button>
 
         <button type='submit'>Submit</button>
-        
+
         <button type='reset'>Reset</button>
     </form>
 
     <script>
+
+        //button js
         const form = document.forms['search'];
         form.addEventListener ('submit', search, false);
 
@@ -42,6 +44,61 @@
         const [input, button] = form.elements;
         //const input = form['searchInput'] does the same thing as above
 
+
+        //object-oriented programming practice
+        class Dice {
+            constructor(sides=6) {
+                Object.defineProperty(this, 'sides', {
+                    get() {
+                        return `This dice has ${sides} sides`;
+                    },
+                    set(value) {
+                        if(value > 0) {
+                            sides = value;
+                            return sides;
+                        }
+                        else {
+                            throw new Error('The number of sides must be positive');
+                        }
+                    }
+                });
+                this.roll = function() {
+                    return Math.floor(sides * Math.random() + 1)
+                }
+            }
+        }
+
+        const blueDice = new Dice(20);        console.log(blueDice.roll());
+
+        //ninja turtle OOP
+        class Turtle {
+            constructor(name,color) {
+                this.name = name;
+                this.weapon = 'hands';
+                let _color = color;
+                this.setColor = color => {return _color = color;}
+                this.getColor = () => _color;
+            }
+            sayHi() {
+                return `Hi dude, my name is ${this.name}`;
+            }
+            attack() {
+                return `Feel the power of my ${this.weapon}!`;
+            }
+        }
+
+        const leo = new Turtle('Leonardo', 'Green');
+        leo.weapon = 'Katana Blades';
+
+        Turtle.prototype.food = 'Pizza';
+        Turtle.prototype.eat = function(){
+            return `Mmm, this ${this.food} tastes great!`;
+        }
+
+        console.log(leo.sayHi());
+        console.log(leo.attack());
+        console.log(leo.eat());
+        console.log(leo.getColor());
     </script>
 </body>
 </html>
