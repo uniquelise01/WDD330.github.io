@@ -29,7 +29,8 @@
         }
         
         //try this, delete later?
-        const input = form.input['searchInput'];
+        input = form['searchInput'];
+        
         input.value = 'Search Here';
         //delete the value once clicked on
         input.addEventListener('focus', function(){
@@ -43,8 +44,7 @@
                 input.value = 'Search Here';
             } }, false);
 
-        const [input, button] = form.elements;
-        //const input = form['searchInput'] does the same thing as above
+        
 
 
         //object-oriented programming practice
