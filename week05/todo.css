@@ -6,14 +6,14 @@ body {
 }
 
 main {
-    max-width: 400px;
+    width: 400px;
     min-height: 600px;
     margin: 30px auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgb(72, 61, 139);
     display: grid;
-    grid-template-rows: auto, 60px;
+    align-content: space-between;
 }
 
 #upper-content {
@@ -29,8 +29,9 @@ h1 {
 
 hr {
     max-width: 50%;
-    border-width: 2px;
+    border-width: 1px;
     margin-top: -20px;
+    border-style: solid;
 }
 
 #empty-list {
@@ -39,11 +40,44 @@ hr {
     padding: 20px;
 }
 
+#task-list-footer {
+    font-family: 'Roboto Slab', serif;
+    font-size: 10pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    background-color: lightgray;
+    margin: 0 20px;
+    display: none; /*we need to make sure to undo this in js*/
+}
+
+#task-list-footer p {
+    margin: 0 auto 0 20px;
+    font-style: italic;
+}
+
+#task-list-footer button {
+    font-family: 'Roboto Slab', serif;
+    font-size: 10pt;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    margin: 0 10px 0 0;
+}
+
+#task-list-footer button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
 #add-new-task {
     grid-row: 2/3;
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: auto 50px;
+    grid-template-columns: auto 60px;
     margin: 20px;
 }
 
@@ -61,7 +95,6 @@ hr {
 }
 
 #new-task-btn {
-    background-size: cover;
     background: transparent;
     border: transparent;
     width: 60px;
@@ -72,12 +105,20 @@ hr {
     cursor: pointer;
 }
 
+/*JS added class css*/
+
+
+
+
 
 /*Phone size*/
-@media only screen and (max-width: 320px) {
+@media (max-width: 320px) {
 
     main {
         width: 100%;
+        margin: 0;
+        border-radius: none;
+        box-shadow: none;
     }
 
 }
