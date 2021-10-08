@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap');
+
+/*Desktop size*/
+body {
+    background-color: lightskyblue;
+}
+
+main {
+    max-width: 400px;
+    min-height: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(72, 61, 139);
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+hr {
+    max-width: 50%;
+    border-width: 2px;
+}
+
+#empty-list {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#new-task-btn img {
+    width: 30px;
+}
+
+#new-task-btn {
+    background-size: cover;
+    background: transparent;
+    border: transparent;
+}
+
+#new-task-btn img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*Phone size*/
+@media only screen and (max-width: 320px) {
+
+    main {
+        width: 100%;
+    }
+
+}

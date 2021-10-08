@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <main id="content">
+        <h1 class="todo-title">To-dos</h1>
+        <hr>
+        
+            <div id="todo-list">
+                <p id="empty-list">Your to-do list is empty!<br> Add a task below to get started.</p>
+            </div>
+
+            <input type="text" id="new-task" placeholder="Enter a new task" maxlength="32"></input>
+
+            <button id="new-task-btn" onclick=functionName()><img src="../images/plus.png" alt="Add a task"></button>
+    </main>
+
+    <script src="ToDos.js"></script>
+    <script src="ls.js"></script>
+    <script src="utilities.js"></script>
+</body>
+</html>
