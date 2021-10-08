@@ -9,16 +9,20 @@
 </head>
 <body>
     <main id="content">
-        <h1 class="todo-title">To-dos</h1>
-        <hr>
-        
+        <div id="upper-content">
+            <h1 class="todo-title">To-dos</h1>
+            <hr>
+            
             <div id="todo-list">
                 <p id="empty-list">Your to-do list is empty!<br> Add a task below to get started.</p>
             </div>
+        </div>
 
-            <input type="text" id="new-task" placeholder="Enter a new task" maxlength="32"></input>
+        <div id="add-new-task">
+            <input type="text" id="new-task-input" placeholder="Enter a new task" maxlength="32"></input>
 
-            <button id="new-task-btn" onclick=functionName()><img src="../images/plus.png" alt="Add a task"></button>
+            <button id="new-task-btn" onclick = addTask()><img src="../images/plus-5th.png" alt="Add a task"></button>
+        </div>
     </main>
 
     <script src="ToDos.js"></script>
