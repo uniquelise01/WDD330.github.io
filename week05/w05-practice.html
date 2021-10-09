@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W05 Practice</title>
+</head>
+<body>
+    <p>Check out my console!</p>
+
+    <script>
+        function amIOldEnough(age){
+            debugger;
+                if (age < 12) {
+                debugger;
+                return 'No, sorry.';
+                } else if (age < 18) {
+                debugger;
+                return 'Only if you are accompanied by an adult.';
+                } else {
+                debugger;
+                return 'Yep, come on in!';
+            }
+        }
+
+        console.log(amIOldEnough(16));
+
+        function squareRoot(number) {
+            'use strict';
+            if (number < 0) {
+                throw new RangeError(`You can't find the square root of negative numbers`)
+            }
+            return Math.sqrt(number);
+        };
+
+        console.log(squareRoot(-3));
+    </script>
+</body>
+</html>
