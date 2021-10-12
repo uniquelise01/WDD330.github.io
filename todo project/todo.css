@@ -38,7 +38,90 @@ hr {
     font-family: 'Roboto Slab', serif;
     text-align: center;
     padding: 20px;
+    display: none;
 }
+
+/************************************************/
+/* css for task list items*/
+
+/* What I used in the html before removing:
+<div id="list-of-tasks">
+...
+    <div class="task-div">
+        <button class="check-box" onclick="">
+            <img src="../images/2561393_square_icon.png" alt="empty checkbox" class="empty-checkbox">
+            <img src="../images/2639910_checkbox_checked_icon.png" alt="checkbox" class="checked-box">
+        </button>
+        <p class="task-text">My task!</p>
+        <button class="x-button" onclick="">
+            <img src="../images/2561206_square_x_icon.png" alt="remove button">
+        </button>
+    </div>
+...
+</div>
+*/
+
+
+.task-div {
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    margin: 30px 20px 0 20px;    
+    height: 50px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 12pt;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 3px 3px 0 3px;
+}
+
+.check-box {
+    background: transparent;
+    border: transparent;
+    width: 50px;
+    height: 50px; 
+}
+
+.check-box img {
+    width: 40px;
+    margin: auto;
+}
+
+.empty-checkbox {
+    /*add js to change display: none; when clicked*/
+}
+
+.checked-box {
+    /*add js to change display: block; when the empty checkbox is clicked*/
+    display: none;
+}
+
+.check-box img:hover {
+    cursor: pointer;
+}
+
+.task-text {
+    padding: 10px;
+    margin: auto 0;
+}
+
+.x-button {
+    background: transparent;
+    border: transparent;
+    width: 50px;
+    height: 50px;
+}
+
+.x-button img {
+    width: 40px;
+    margin: auto;
+}
+
+.x-button img:hover {
+    cursor: pointer;
+}
+/* end of css for task list items*/
+/************************************************/
+
 
 #task-list-footer {
     font-family: 'Roboto Slab', serif;
@@ -50,10 +133,10 @@ hr {
     align-content: space-between;
     background-color: lightgray;
     margin: 0 20px;
-    display: none; /*we need to make sure to undo this in js*/
+    display: none; /*we need to make sure to change this to display: flex in js*/
 }
 
-#task-list-footer p {
+#tasks-left {
     margin: 0 auto 0 20px;
     font-style: italic;
 }
@@ -112,13 +195,19 @@ hr {
 
 
 /*Phone size*/
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
+
+    body {
+        margin: 0;
+        background-color: white;
+    }
 
     main {
         width: 100%;
         margin: 0;
-        border-radius: none;
+        border-radius: 0;
         box-shadow: none;
+        background-color: transparent;
     }
 
 }

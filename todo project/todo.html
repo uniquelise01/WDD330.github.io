@@ -14,9 +14,12 @@
             <hr>
             
             <div id="todo-list">
+                <div id="list-of-tasks">
+                    
+                </div>
                 <p id="empty-list">Your to-do list is empty!<br> Add a task below to get started.</p>
                 <div id="task-list-footer">
-                    <p></p>
+                    <p id="tasks-left"></p>
                     <button id="all-tasks-btn" onclick="">All</button>
                     <button id="active-tasks-btn" onclick="">Active</button>
                     <button id="completed-tasks-btn" onclick="">Completed</button>
@@ -25,14 +28,14 @@
         </div>
 
         <div id="add-new-task">
-            <input type="text" id="new-task-input" placeholder="Enter a new task" maxlength="32"></input>
+            <input type="text" id="new-task-input" placeholder="Enter a new task" maxlength="32">
 
             <button id="new-task-btn" onclick = addTask()><img src="../images/plus-5th.png" alt="Add a task"></button>
         </div>
     </main>
 
-    <script src="ToDos.js"></script>
-    <script src="ls.js"></script>
-    <script src="utilities.js"></script>
+    <script type="module" src="ToDos.js"></script>
+    <script type="module" src="ls.js"></script>
+    <script type="module" src="utilities.js"></script>
 </body>
 </html>
