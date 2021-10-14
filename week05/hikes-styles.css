@@ -20,8 +20,9 @@ body {
 
   ul {
       list-style: none;
-      margin: 0 20px;;
+      margin: 0 auto;;
       padding: 0;
+      max-width: 700px;
   }
 
   h2 {
@@ -29,19 +30,50 @@ body {
       padding: 10px;
       background-color: lightsteelblue;
   }
-  
-  .image {
-      width: 50%;
-      margin: 0 30px;
-      display: inline-block;
-  }
-  
-  .hike-info {
-    margin: 0 30px;
-   
+
+  .light {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0 auto 50px auto;
   }
 
-  .hike-info-single {
-    margin: 0 30px;
-    
+  .light h2 {
+      width: 100%;
+      flex: 1 0 auto;
+  }
+
+  .light img {
+      width: 90%;
+      flex: 1 1 auto;
+      margin: auto 30px;
+  }
+
+  .light div {
+      width: 50%;
+      flex: 1 1 auto;
+  }
+
+  .light div h3{
+      margin: 20px 30px 5px 30px;
+  }
+
+  .light div p {
+      margin: 0 30px;
+  }
+
+  .hidden {
+      display: none;
+  }
+
+  .full div {
+      margin: 30px;
+  }
+
+  .full h3 {
+      margin-bottom: 5px;
+  }
+
+  .full p {
+      margin: 0 auto;
   }
