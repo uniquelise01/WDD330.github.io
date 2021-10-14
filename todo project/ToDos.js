@@ -1,20 +1,21 @@
 'use strict';
 
 import {JSONStorage} from "./ls.js";
+//add code to read local data***********
+
 
 //Create ToDos class
 class ToDos {
-    constructor(task) {
-        this.task = task;
+    constructor(id, content, completed) {
+        this.id = id;
+        this.content = content;
+        this.completed = completed;
     }
-    //saveToDo(task, key)
-    //getToDos(key)
-    //addToDo()
-    //renderToDoList(list, element)
-    //listToDos()
-    //completeToDo()
-    //removeToDo()
-    //filterToDos()
+    
+}
+
+function addTask() {
+    
 }
 
 
