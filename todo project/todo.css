@@ -87,10 +87,6 @@ hr {
     margin: auto;
 }
 
-.empty-checkbox {
-    /*add js to change display: none; when clicked*/
-}
-
 .checked-box {
     /*add js to change display: block; when the empty checkbox is clicked*/
     display: none;

@@ -1,10 +1,11 @@
 'use strict';
 
-import {JSONStorage} from "./ls.js";
+import {myStorage} from "./ls.js";
 //add code to read local data***********
 
-//const localStorage = new JSONStorage()
+const ls = new myStorage();
 
+var ToDoArray = [];
 
 //Create ToDos class
 class ToDos {
@@ -12,58 +13,75 @@ class ToDos {
         this.id = id;
         this.content = content;
         this.completed = completed;
-        this.taskDiv = document.getElementById(elementId);
+        this.taskDiv = document.getElementById(elementId); 
+        this.todo = {id: this.id, content: this.content, completed: this.completed}
     }
     
-    saveTodo(task, key) {}
+    saveTodo(key, value) {
+        ls.set(key, value);
+    }
     
-    getTodos(key) {}
+    getTodos(key) {
+        ls.get(key);
+    }
 
     addTodo() {
         const task = this.content;
         const id = this.id;
         this.taskDiv.appendChild(renderTodoList(task, id));
         checkIfEmpty();
-        this.tasksLeft()
         this.taskEvents();
-        this.saveTodo();
+
+        //for saving the array        
+        ToDoArray.push(this.todo);
+
+        //this.saveTodo("myList", ToDoArray);
+
+        tasksLeft()
     }
 
     completeTodo() {
-        const id = this.id;        
-        if (this.completed === false) {
-            this.completed = true;        markAsDone(id);        
+        const id = this.id;  
+        const contId = this.content;
+        const index = ToDoArray.findIndex(element => element.id === id);
+
+        if (ToDoArray[index].completed === false) {
+            ToDoArray[index].completed = true;        
+            markAsDone(contId, id);        
         } else {
-            this.completed = false;
-            markAsUndone(id);
+            ToDoArray[index].completed = false;
+            markAsUndone(contId, id);
         }
-        this.tasksLeft();
+        tasksLeft();
     }
 
-    tasksLeft() {
-        const TodoArray = Array.from(this.taskDiv.children);
-        let x = 0;
+    removeTodo() {
+        const id = this.id;
 
-        for (let i = 0; i < TodoArray.length; i++) {
-            if (this.completed === false) {
-                x++;
-            }
-        }
-        renderTasksLeft(x);
+        const index = ToDoArray.findIndex(element => element.id === id);
+        ToDoArray.splice(index, 1);
+
+        removeTaskRendering(id);
+        tasksLeft();
     }
-
-    removeTodo() {}
 
     filterTodos() {}
 
     taskEvents() {
-        const childrenArray = Array.from(this.taskDiv.children);
 
-        childrenArray.forEach(child => {
-            child.addEventListener('click', e => {
-                this.completeTodo(e.currentTarget);
-            });
-        });
+        this.taskDiv.lastChild.childNodes[1].addEventListener('click', e => {
+            this.completeTodo(e.target);
+        })
+
+        this.taskDiv.lastChild.lastChild.addEventListener('click', e => {
+            this.removeTodo(e.target);
+        })
+
+        //all button
+
+        //active button
+
+        //completed button
     }
 
 }
@@ -91,12 +109,13 @@ function addTaskFunct () {
 function renderTodoList(task, id) {
     const item = document.createElement("div");
     item.classList.add('task-div');
+    item.id = `${id}_pineapple`;
     item.innerHTML = `
     <button class="check-box">
         <img src="../images/2561393_square_icon.png" alt="empty checkbox" class="empty-checkbox" id="${id}_sid">
         <img src="../images/2639910_checkbox_checked_icon.png" alt="checkbox" class="checked-box" id="${id}">
     </button>  
-    <p class="task-text">${task}</p>
+    <p class="task-text" id="${task}">${task}</p>
     <button class="x-button">
         <img src="../images/2561206_square_x_icon.png" alt="remove button">
     </button>`;
@@ -104,9 +123,29 @@ function renderTodoList(task, id) {
 }
 
 
-//to show how many tasks are left on the list...
+//to calculate the tasks left
+function tasksLeft() {
+    let x = 0;
+
+    ToDoArray.forEach(child => {
+        if (child.completed === false) {
+            x++;
+        }
+    renderTasksLeft(x);
+    })
+}
+
+//to render tasks left on the list...
 function renderTasksLeft(x) {
     document.getElementById("tasks-left").innerHTML = x + " tasks left"
+}
+
+
+//remove a div once the X is clicked
+function removeTaskRendering(id) {
+    document.getElementById(id + "_pineapple").remove();
+
+    checkIfEmpty();
 }
 
 
@@ -114,14 +153,16 @@ function renderTasksLeft(x) {
 //OTHER******************************************
 
 //for when the task is marked as complete...
-function markAsDone(id) {
+function markAsDone(contId, id) {
     document.getElementById(id).style.display = "block";
     document.getElementById(id + "_sid").style.display = "none";
+    document.getElementById(contId).style.textDecoration = "line-through";
 }
 
-function markAsUndone(id) {
+function markAsUndone(contId, id) {
     document.getElementById(id).style.display = "none";
     document.getElementById(id + "_sid").style.display = "block";
+    document.getElementById(contId).style.textDecoration = "none";
 }
 
 
@@ -135,10 +176,6 @@ function markAsUndone(id) {
 
 //Complete Todos.listTodos()
 
-//Complete Todos.completeTodo()
-
-//Complete Todos.removeTodo()
-
 //Complete Todos.filterTodos()
 
 
@@ -149,8 +186,11 @@ function markAsUndone(id) {
 function checkIfEmpty(){
     let emptyTest = document.querySelector("#list-of-tasks")
 
+    console.log(emptyTest.childNodes.length);
+
     if (emptyTest.childNodes.length === 1){
         document.getElementById("empty-list").style.display = "block";
+        document.getElementById("task-list-footer").style.display = "none";
     } else {
         document.getElementById("empty-list").style.display = "none";
         document.getElementById("task-list-footer").style.display = "flex";
@@ -158,13 +198,3 @@ function checkIfEmpty(){
 }
 
 checkIfEmpty();
-
-
-
-
-
-/* My current to do list:
-
-- debug why clicking on one task marks everything under it as completed
-- debug why the tasks left function says there are 0 tasks left if just one is completed.
-- figure out how to add an event listener to two different buttons in a parent element*/
