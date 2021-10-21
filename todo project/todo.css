@@ -45,23 +45,6 @@ hr {
 /************************************************/
 /* css for task list items*/
 
-/* What I used in the html before removing:
-<div id="list-of-tasks">
-...
-    <div class="task-div">
-        <button class="check-box" onclick="">
-            <img src="../images/2561393_square_icon.png" alt="empty checkbox" class="empty-checkbox">
-            <img src="../images/2639910_checkbox_checked_icon.png" alt="checkbox" class="checked-box">
-        </button>
-        <p class="task-text">My task!</p>
-        <button class="x-button" onclick="">
-            <img src="../images/2561206_square_x_icon.png" alt="remove button">
-        </button>
-    </div>
-...
-</div>
-*/
-
 
 .task-div {
     display: grid;

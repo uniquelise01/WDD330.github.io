@@ -7,11 +7,11 @@ export class myStorage {
     }
 
     set(k, v){
-        localStorage.setItem(k, v);
+        localStorage.setItem(k, JSON.stringify(v));
     }
 
     get(k){
-        localStorage.getItem(k);
+        return JSON.parse(localStorage.getItem(k))
     }
 
     remove(k){
