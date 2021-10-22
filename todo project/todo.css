@@ -172,7 +172,7 @@ hr {
 
 
 /*Phone size*/
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
 
     body {
         margin: 0;
