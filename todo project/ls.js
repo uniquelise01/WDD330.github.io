@@ -1,6 +1,3 @@
-//todo: { id : timestamp, content: string, completed: bool }
-//toDoList = [toDo];
-
 
 export class myStorage {
     constructor(){
