@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W07 Notes and Exercises | Elise Mickle</title>
+    <link rel="stylesheet" href="../css/weeks.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Week 07 Notes & Exercises</h1>
+    </header>
+
+    <main>
+        <h2>Notes</h2>
+        <ul>
+            <li>I didn't know you could use methods on functions. For example, you can find a function.length or function.call(). The <i>.apply</i> method works like the <i>.call()</i> method, except your arguments must be provided as an array.</li>
+            <li>Apparently you can also create your own properties to functions, like <i>square.description = "blah blah blah."</i></li>
+            <li>You can create an immediately invoked function expression (or IIFE, "iffy") that is anonymous but is invoked as soon as it is defined and only runs once. You do this by putting the function in parentheses, and then putting () parentheses after that. You don't have to give the function a name because of that. Any variables declared in the IIFE will disappear after the function has been invoked.</li>
+            <li>You can also re-define functions within the function, so it runs code a certain way the first time, and then the second time it runs the code differently.</li>
+            <li>Recursive functions are those that keep calling themselves until a certain criteria is met. There's an example of this in my Practice link js.</li>
+            <li>I don't feel like I understand promises well enough to explain them in my notes, but I have a basic understanding that it's some sort of code that is set up similar to a class, except you need a <i>resolve()</i> and <i>reject()</i> function depending on whether or not the promise operation in successful.</li>
+            <li>Apparently there is such a thing as "pure" and "impure" functions. Explained simply, pure function don't change the value of a pre-established variable, don't have side-effects, always have arguments, and always return the same result when given the same arguments.</li>
+            <li>You can add a callback function as an argument in another function that will run as soon as the first function is complete. For example, <i>function findHypotenuse(2, 3, square)</i> would run the findHypotenuse function first, and then run the returning value through the square function.</li>
+            <li>Ajax allows you to communicate with a server and update your pages without reloading.It works asynchronously and with JSON.</li>
+            <li>APIs are "application programming interface" that grants you external access to another program or service. You can gain access to APIs using the <i>fetch()</i> method.</li>
+        </ul>
+
+        <h2>Exercises</h2>
+        <a href="./group-activity-hikes7.html">Group Activity Hikes</a><br>
+        <a href="w07practice.html">Practice</a>
+
+        <h2>Questions</h2>
+        <ul>
+            <li>I don't understand the concept of "asynchronous." Is it running two functions at the same time? Or skipping one function until another is called?</li>
+        </ul>
+    </main>
+</body>
+</html>
