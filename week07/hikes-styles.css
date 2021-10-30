@@ -77,3 +77,21 @@ body {
   .full p {
       margin: 0 auto;
   }
+
+  /*comments*/
+  #comments {
+      padding: 0.5em;
+  }
+  .addComment > h2 {
+      text-align: center;
+      background-color: indianred;
+  }
+  .addComment input {
+      width: 100%;
+      border: 1px solid;
+      font-size: 1.2em;
+  }
+  .addComment button {
+      padding: 0.5em;
+      border: 1px solid;
+  }

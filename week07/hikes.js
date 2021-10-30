@@ -1,3 +1,5 @@
+import Comments from './comments.js';
+
 
 //create an array of hikes
 const hikeList = [
@@ -43,6 +45,7 @@ const hikeList = [
       this.parentElement = document.getElementById(elementId);
       // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
       this.backButton = this.buildBackButton();
+      this.comments = new Comments('hikes', 'comments');
     }
     // why is this function necessary?  hikeList is not exported, and so it cannot be seen outside of this module. I added this in case I ever need the list of hikes outside of the module. This also sets me up nicely if my data were to move. I can just change this method to the new source and everything will still work if I only access the data through this getter.
     getAllHikes() {
@@ -62,6 +65,7 @@ const hikeList = [
         this.addHikeListener();
         // make sure the back button is hidden
         this.backButton.classList.add('hidden');
+        this.comments.showCommentList();
     }
 
 
@@ -71,6 +75,7 @@ const hikeList = [
         this.parentElement.innerHTML = '';
         this.parentElement.appendChild(renderOneHikeFull(hike));
         this.backButton.classList.remove('hidden');
+        this.comments.showCommentList(hikeName);
     }
 
 
