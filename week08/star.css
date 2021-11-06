@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap');
+
+body {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  padding: 0 25px;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+#shiplist th {
+  padding: 0 15px;
+}
+
+#shiplist td {
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+
+/*details box*/
+#detailsbox {
+  padding: 20px;
+  border: 2px solid lightsteelblue;
+  margin: 20px;
+}
+
+/***********/
+
+
+#shiplist {
+  /* display: flex; */
+  flex-flow: row wrap;
+  list-style-type: none;
+}
+
+#shiplist thead {
+  background-color: lightsteelblue;
+}
+
+#shiplist tr {
+  border: 1px solid;
+  padding: 0.5em;
+  height: 44px;
+}
+
+#shiplist tr:nth-child(even) {
+  background-color: rgb(231, 231, 231);
+}
+
+#shiplist tr:hover {
+  background-color: bisque;
+  text-decoration: underline;
+}
+
+#prev {
+  margin: 20px;
+}
+
+#next {
+  margin: 20px;
+}

@@ -1,0 +1,38 @@
+
+body {
+        display: inclin;
+}
+
+/*BALL TRANSITION*/
+/*big ball animation*/
+.anim:active .ball-one {
+        left: 150px;
+        transition: left .5s ease-in;
+}
+
+/*small ball animation*/
+.anim:active .ball-two {
+        left: 500px;
+        transition: left .5s ease-out .4s;
+}
+
+/*css for balls*/
+.ball-one {
+        background: #ff97c0;
+        border-radius: 50%;
+        position: relative;
+        top: 0px;
+        left: 00px;
+        width: 200px;
+        height: 200px;
+}
+
+.ball-two {
+        background: #0097c0;
+        border-radius: 50%;
+        position: relative;
+        top: -100px;
+        left: 300px;
+        width: 100px;
+        height: 100px;
+}

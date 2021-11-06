@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W08 Notes and Exercises | Elise Mickle</title>
+    <link rel="stylesheet" href="../css/weeks.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Week 08 Notes & Exercises</h1>
+    </header>
+
+    <main>
+        <h2>Notes</h2>
+        <ul>
+            <li>You can use the CSS3 <i>transform</i> property to alter the location of an element. You can use <i>transform: translate(45px, -45px)</i> to move an element to (x, y). Note: transforms don't work on inline elements. Change it to inline-block, etc. You can put multiple transform properties under the same transform (ex: both translate and scale).</li>
+            <li>Transform: scale(x,y) will scale your element bigger or smaller. Just doing <i>scale(2)</i> would double its size, whereas doing <i>scale(1, 0.25)</i> would keep the horizontal scale the same but then shrink it vertically by 0.25.</li>
+            <li>Here is a list of all the transform properties mentioned in chapter 8: translate(x,y); translateX(x); translateY(y); scale(x,y); rotate(_deg); skew(x,y).</li>
+            <li>You can change the transform-origin to 0 0 or top center, etc, to change the location on the element where it's rotated, etc.</li>
+            <li>Note: the order your transform elements matters. Otherwise you will end up with an element in a different location or in the wrong shape.</li>
+            <li>You can use the CSS3 <i>transition</i> property to change an element over time. Use <i>transition-property</i> to define which css properties should be transitioned (all is default). Use <i>transition-duration</i> to set how long the transition should take (s or ms). Use <i>transition-timing-function</i> to control the pace of the transition (start slow, end fast, vice versa). Use <i>transition-delay</i> to delay when the transition starts (s or ms). You can also just use <i>transition</i> and list our the four transitions.</li>
+            <li>You can use animations to have more control over your transitions. Animations use keyframes, which are essentially little snapshots that guide the direction of the animation.Use <i>animation-name, animation-duration, animation-iteration-count, animation-direction, animation-delay, animation-fill-mode, animation-play-state</i> and <i>animation-timing-function</i> to create your animation.</li>
+        </ul>
+
+        <h2>Exercises</h2>
+        <a href="star-wars.html">Group Activity API</a><br>
+        <a href="w08-practice.html">Practice</a>
+
+        <h2>Questions</h2>
+        <ul>
+            <li>When should you include code for older browsers? Always? Or only when using certain code, etc?</li>
+            <li>Is CSS3 the only way to create animations on a webpage?</li>
+        </ul>
+    </main>
+</body>
+</html>
