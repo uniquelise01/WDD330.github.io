@@ -7,14 +7,145 @@
         <title>W08 Practice - Elise Mickle</title>
         <link rel="stylesheet" href="practice.css">
 </head>
+
 <body>
         <h1>Ball animation</h1>
         <p>Click on the pink ball!</p>
-        
+
         <div class="anim">
                 <div class="ball-one"></div>
                 <div class="ball-two"></div>
         </div>
 
+
+        <h1>Canvas practice</h1>
+        
+        <img src="../images/2639910_checkbox_checked_icon.png" id="myImageElem" width="50px;">
+
+        <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+        </canvas>
+
+        <button id="grad-rectangle" onclick="drawGradientRectangle()">Square</button>
+        <button id="circle" onclick="drawCircle()">Circle</button>
+        <button id="html-img" onclick="drawImageToCanvas()">Image</button>
+        <button id="message" onclick="canvasMessage()">Message</button>
+
+
+        <h1>Drag & Drop Practice</h1>
+        <h3 id="catHeading">Feed the cat!</h3>
+
+                <arcticle id="ac3">
+                        <img src="../images/cat.svg" alt="WAI-ARIA Cat" width="300px" id="cat">
+
+                        <div class="content">
+                                <p id="mouseContainer" class="mc">
+                                        <img src="../images/mouse.svg" alt="mouse treat" id="mouse1" draggable="true" width="100px">
+                                        <img src="../images/mouse.svg" alt="mouse treat" id="mouse2" draggable="true" width="100px">
+                                        <img src="../images/mouse.svg" alt="mouse treat" id="mouse3" draggable="true" width="100px">
+                                </p>
+                        </div>
+                </arcticle>
+
+
+        <h1>SVG practice</h1>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                <desc>Drawing a pink circle</desc>
+                <circle cx="50" cy="50" r="25" fill="lightpink"/>
+        </svg>
+
+        
+
+        
+
+        <script>
+                //canvas
+                function drawGradientRectangle(){
+                        const canvas = document.getElementById("myCanvas");
+                        const context = canvas.getContext("2d");
+                        
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+
+                        const gradient = context.createLinearGradient(0,0,0,200);
+                        gradient.addColorStop(0, "darkslategray");
+                        gradient.addColorStop(1, "white");
+
+                        context.fillStyle = gradient;
+                        context.strokeStyle = "darkslategray";
+
+                        context.fillRect(10,10,100,100);
+                        context.strokeRect(10,10,100,100);
+                }
+
+                function drawCircle() {
+                        const canvas = document.getElementById("myCanvas");
+                        const context = canvas.getContext("2d");
+
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+
+                        context.beginPath();
+                        context.arc(50,50,30,0, Math.PI*2, true);
+                        context.closePath();
+                        context.strokeStyle = "yellow";
+                        context.fillStyle = "gold";
+                        context.lineWidth = 3;
+                        context.fill();
+                        context.stroke();
+                }
+
+                function drawImageToCanvas() {
+                        const canvas = document.getElementById("myCanvas");
+                        const context = canvas.getContext("2d");
+                        const image = document.getElementById("myImageElem");
+
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+
+                        context.drawImage(image, 20,20, 50, 50);
+                }
+
+                function canvasMessage() {
+                        const canvas = document.getElementById("myCanvas");
+                        const context = canvas.getContext("2d");
+
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+
+                        context.fillStyle = "black";
+                        context.textAlign = "left";
+                        context.font = "9pt LeagueGothic, Tahoma, Geneva, sans-serif";
+                        context.fillText("This is a cute message for ", 10, 20);
+                        context.fillText("all those who wish to play with", 10, 40);
+                        context.fillText("my canvas buttons!", 10, 60);
+                }
+
+                //drag and drop
+                const mice = document.querySelectorAll("#mouseContainer img");
+                for (let i=0; i < mice.length; i++) {
+                        mouse = mice[i];
+                        mouse.addEventListener('dragstart', function (event) {
+                                event.dataTransfer.setData("text/plain", this.id);
+                        });
+                }
+
+                const cat = document.getElementById("cat");
+                cat.addEventListener("dragover", function(event) {
+                        event.preventDefault();
+                });
+
+                cat.addEventListener("drop", function(event) {
+                        const mouseHash = {
+                                mouse1: 'NOMNOMNOM',
+                                mouse2: 'Meow',
+                                mouse3: 'Purrrrrr ...'
+                        };
+                        const catHeading = document.getElementById('catHeading');
+                        let mouseID = event.dataTransfer.getData("text/plain");
+                        catHeading.innerHTML = mouseHash[mouseID];
+
+                        const mousey = document.getElementById(mouseID);
+                        mousey.parentNode.removeChild(mousey);
+                        event.preventDefault();
+                })
+
+        </script>
 </body>
 </html>

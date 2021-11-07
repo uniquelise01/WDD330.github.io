@@ -1,7 +1,9 @@
 
 body {
-        display: inclin;
+        display: block;
+        padding: 25px;
 }
+
 
 /*BALL TRANSITION*/
 /*big ball animation*/
@@ -36,3 +38,16 @@ body {
         width: 100px;
         height: 100px;
 }
+
+.myCanvas {
+        border: dotted 2px black;
+}
+
+#myImageElem {
+        display: none;
+}
+
+.draganddrop .mc {
+        text-align: center;
+}
+
