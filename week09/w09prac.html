@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang='en'>
+<head>
+        <meta charset='utf-8'>
+        <title>Animation Example</title>
+        <style>
+                #square {
+                        margin: 100px;
+                        width: 100px;
+                        height: 100px;
+                        background: #d16;
+                }  
+        </style>
+</head>
+
+<body>
+        <h3>Spinning Square</h3>
+        <div id='square'></div>
+
+        <script>
+                const squareElement = document.getElementById('square');
+                let angle = 0;
+
+                function rotate() {
+                angle = (angle + 2)%360;
+                squareElement.style.transform = `rotate(${angle}deg)`
+                window.requestAnimationFrame(rotate);
+                }
+
+                const id = requestAnimationFrame(rotate);
+        </script>
+</body>
+</html>

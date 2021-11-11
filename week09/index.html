@@ -17,7 +17,12 @@
     <main>
         <h2>Notes</h2>
         <ul>
-            <li></li>
+            <li>The window object is the global object for a browser. You can use it to do things like find the screen dimensions, create pop-up windows, create alerts, create confirm pop-ups, create prompts, etc.</li>
+            <li>You can create global variables without using const, let, or var. You just declare them, like <i>x = 6</i>.</li>
+            <li>The <i>window.navigator.userAgent</i> can tell you what browser and operating system is being used. You can use <i>window.location.href</i> to identify the current page url, and you can also set it = to something to redirect someone to a different page. There's also location.protocol, .host, .hostname, .port, and a bunch of other location properties.</li>
+            <li>Use <i>window.history</i> to access previously visited pages in the current browser session. There are a few properties that go with .history as well.</li>
+            <li>You can also use <i>window.moveTo(x,y)</i> and <i>window.resizeTo(px,px)</i> but you should usually avoid these since they're really annoying. You can get the screen width and height with <i>window.screen.height</i>, etc.</li>
+            <li>Cookies allow information to be stored between visits, so browsers can retrieve information for later visits. You can create them by doing <i>document.cookie = 'string=ofInformation; name=Superman; hero=true'</i>.</li>
         </ul>
 
         <h2>Exercises</h2>
