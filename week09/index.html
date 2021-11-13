@@ -23,6 +23,8 @@
             <li>Use <i>window.history</i> to access previously visited pages in the current browser session. There are a few properties that go with .history as well.</li>
             <li>You can also use <i>window.moveTo(x,y)</i> and <i>window.resizeTo(px,px)</i> but you should usually avoid these since they're really annoying. You can get the screen width and height with <i>window.screen.height</i>, etc.</li>
             <li>Cookies allow information to be stored between visits, so browsers can retrieve information for later visits. You can create them by doing <i>document.cookie = 'string=ofInformation; name=Superman; hero=true'</i>.</li>
+            <li>You can use the <i>data-</i> attribute to embed data on a page that is ignored by the browser. Ex: <i>div id='hero' data-powers='flight'</i>. You can access this information by doing this: <i>const superman = document.getElementById('hero'); const powers = superman.dataset.powers;</i>.</li>
+            <li>You can use a geolocation API to obtain the geographic position of a device. You do this with <i>navigator.geolocation.getCurrentPosition(youAreHere)</i> with <i>youAreHere()</i> as a function that documents the latitude and longitude.</li>
         </ul>
 
         <h2>Exercises</h2>
@@ -31,7 +33,7 @@
 
         <h2>Questions</h2>
         <ul>
-            <li></li>
+            <li>What's the difference between cookies and local storage and when should you use them?</li>
         </ul>
     </main>
 </body>
