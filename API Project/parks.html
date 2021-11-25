@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>National Parks API</title>
+        <link rel="stylesheet" href="./parks.css">
+</head>
+<body>
+        <header>
+                <h1>United States National Parks</h1>
+        </header>
+
+        <main>
+                <div id="menu-buttons">
+                        <button class="top-btn">All Parks</button>
+                        <div class="dropdown">
+                                <button class="top-btn filter-btn">Filter <img src="../images/arrow-down-sign-to-navigate.png" alt="dropdown button"></button>
+                                
+                                <div class="filter-content">
+                                        <p>AL</p>
+                                        <p>AZ</p>
+                                        <p>TX</p>
+                                        <p>FL</p>
+                                </div>
+                        </div>
+                        <button class="top-btn">Favorites</button>
+                </div>
+
+                <div id="display-parks">
+
+                        <div class="park-list-item">
+                                <p>Grand Canyon National Park</p>
+                                <div class="park-list-btns">
+                                        <button class="detail-btn">Details</button>
+                                        <button class="favorite-heart">
+                                                <img src="../images/heart.png" alt="empty heart" class="empty-heart">
+                                                <img src="../images/heart (1).png" alt="full heart" class="full-heart hidden">
+                                        </button>
+                                </div>
+                        </div>
+
+                        <div class="park-list-item">
+                                <p>Teton National Park</p>
+                                <div class="park-list-btns">
+                                        <button class="detail-btn">Details</button>
+                                        <button class="favorite-heart">
+                                                <img src="../images/heart.png" alt="empty heart" class="empty-heart">
+                                                <img src="../images/heart (1).png" alt="full heart" class="full-heart hidden">
+                                        </button>
+                                </div>
+                        </div>
+
+                </div>
+
+                <div id="detail-box">
+
+                        <div class="park-details">
+                                <div class="details-top">
+                                        <h3>National Park Name</h3>
+                                        <img src="../images/cross.png" alt="x icon" class="exit-btn">
+                                </div>
+                                
+                                <img src="https://www.nps.gov/common/uploads/structured_data/3C861078-1DD8-B71B-0B774A242EF6A706.jpg" alt="api image caption" class="park-picture">
+                                <div class="fine-details">
+                                        <p>Description from API I'm just making this longer to see if it expands the box</p>
+                                        <p><strong>State:</strong> STATE</p>
+                                        <p><strong>Entrance Fee:</strong> PRICE</p>
+                                        <p><strong>Phone:</strong> NUMBER</p>
+                                        <p><strong>Website:</strong> <a href="weblink.gov">weblink.gov</a></p>
+                                </div>
+                                <p class="caption">API image caption</p>
+                        </div>
+
+                </div>
+
+                <div id="prev-next">
+                        <button class="bottom-btn"><img src="../images/left-arrow.png" alt="left arrow"> Previous</button>
+                        <button class="bottom-btn">Next <img src="../images/right-arrow.png" alt="right arrow"></button>
+                </div>
+
+                <div class="hidden">
+                        <div>Down arrow icon made by <a href="https://www.freepik.com" title="Freepik">Freepik.</a>
+                        Next and Prev icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a>
+                        Heart icons made by <a href="https://www.flaticon.com/authors/vlad-szirka" title="Vlad Szirka">Vlad Szirka</a>
+                        X icon made by <a href="https://www.flaticon.com/authors/ilham-fitrotul-hayat" title="Ilham Fitrotul Hayat">Ilham Fitrotul Hayat</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+        </main>
+
+        <script src="./main.js" type="module"></script>
+        
+</body>
+</html>
