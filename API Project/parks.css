@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Mobile */
+
+h1 {
+        font-family: 'DM Serif Display', serif;
+        text-align: center;
+        margin: 20px auto 10px auto;
+}
+
+body {
+        font-family: 'Lato', sans-serif;
+        font-size: .8em;
+}
+
+
+/***********************************************************/
+/* Top menu bars */
+#menu-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: #8BBEB2;
+}
+
+.top-btn {
+        padding: 15px;
+        border: none;
+        background-color: transparent;
+        font-weight: 700;
+        font-size: 1em;
+        font-family: 'Lato', sans-serif;
+}
+
+.dropdown img {
+        width: 10px;
+}
+
+.top-btn:hover {
+        background-color: white;
+}
+
+.dropdown {
+        position: relative;
+        display: inline-block;
+}
+
+.filter-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 5em;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+}
+
+/* Remember to change this p when you decide what html tag to use in the menu */
+.filter-content p {
+        color: black;
+        padding: 5px 10px;
+        margin: 0;
+        font-size: 1em;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+}
+
+.filter-content p:hover {
+        background-color: lightgray;
+        cursor: pointer;
+}
+
+.dropdown:hover .filter-content {
+        display: block;
+}
+
+
+/***********************************************************/
+/* CSS for API parks list */
+/* js html
+<div class="park-list-item">
+        <p>Grand Canyon National Park</p>
+        <div class="park-list-btns">
+                <button class="detail-btn">Details</button>
+                <button class="favorite-heart">
+                        <img src="../images/heart.png" alt="empty heart" class="empty-heart">
+                        <img src="../images/heart (1).png" alt="full heart" class="full-heart hidden">
+                </button>
+        </div>
+</div>
+*/
+
+.park-list-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0 20px;
+        background-color: #EAEBED;
+        margin: 5px;
+}
+
+.park-list-btns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+}
+
+.park-list-btns button {
+        border: none;
+        background: transparent;
+        font-family: 'Lato', sans-serif;
+        margin: 0 10px;        
+        text-decoration: underline;
+}
+
+.park-list-btns button:hover {
+        cursor: pointer;
+        font-weight: 700;
+}
+
+.park-list-item img {
+        height: 30px;
+}
+
+.favorite-heart {
+        width: 40px;
+        display: grid;
+        grid-template: 1/1;
+}
+
+/* If you can figure out how to replace the image with the heart(1) rather than overlap them, try that. This is a temporary fix. */
+.empty-heart {
+        z-index: 1;
+}
+
+.full-heart {        
+        position: absolute;
+        /* remove the hidden class for now to display a red heart */
+}
+
+
+/***********************************************************/
+/* Prev & Next buttons */
+#prev-next {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+}
+
+.bottom-btn {
+        font-family: 'Lato', sans-serif;
+        margin: 20px;
+        border: none;
+        background-color: transparent;
+}
+
+.bottom-btn img {
+        width: 10px;
+}
+
+.bottom-btn:hover {
+        cursor: pointer;
+        font-weight: 700;
+}
+
+
+/***********************************************************/
+/* Detail pop-up box */
+/* js html
+<div class="park-details">
+        <div class="details-top">
+                <h3>National Park Name</h3>
+                <img src="../images/cross.png" alt="x icon" class="exit-btn">
+        </div>
+        
+        <img src="api-image-link" alt="api image caption" class="park-picture">
+        <div class="fine-details">
+                <p>Description from API</p>
+                <p><strong>State:</strong> STATE</p>
+                <p><strong>Entrance Fee:</strong> PRICE</p>
+                <p><strong>Phone:</strong> NUMBER</p>
+                <p><strong>Website:</strong> <a href="weblink.gov">weblink.gov</a></p>
+        </div>
+        <p class="caption">API image caption</p>
+</div>
+*/
+.park-details {
+        max-width: 90%;
+        margin: auto;
+        background: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius: 1%;
+        overflow: hidden;
+        position: absolute;
+        top: 200px;
+        left: 5%;
+        z-index: 2;
+}
+
+.details-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        font-family: 'DM Serif Display', serif;
+}
+
+.exit-btn {
+        height: 40px;
+}
+
+.exit-btn:hover {
+        cursor: pointer;
+}
+
+.park-picture {
+        height: 400px;
+        width: auto;
+}
+
+.fine-details {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 5px 15px;
+        margin: 30px;
+        border-radius: 1%;
+        position: absolute;
+        top: 100px;;
+}
+
+.fine-details p {
+        margin: 7px;
+}
+
+.caption {
+        font-size: 0.75em;
+        text-align: center;
+        padding: 0 0 10px 0;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+        right: 40px;
+}
+
+
+/***********************************************************/
+/* For hidden elements */
+.hidden {
+        display: none;
+}
+
+
+
+/***********************************************************/
+/* Desktop */
+@media screen and (min-width: 501px) {
+        body {
+                max-width: 700px;
+                margin: auto;
+                font-size: 1em;
+        }
+
+        h1 {
+                margin: 30px;
+        }
+
+        .park-list-item {
+                max-width: 600px;
+                margin: 5px auto;
+        }
+
+        #prev-next {
+                margin-left: 40px;
+                margin-right: 40px;
+        }
+}
