@@ -30,6 +30,7 @@ body {
         font-weight: 700;
         font-size: 1em;
         font-family: 'Lato', sans-serif;
+        transition: 0.3s;
 }
 
 .dropdown img {
@@ -136,9 +137,13 @@ body {
 
 .full-heart {        
         position: absolute;
+        display: none;
         /* remove the hidden class for now to display a red heart */
 }
 
+.favorite-heart:hover .full-heart{
+        display: flex;
+}
 
 /***********************************************************/
 /* Prev & Next buttons */
@@ -167,6 +172,7 @@ body {
 
 /***********************************************************/
 /* Detail pop-up box */
+
 /* js html
 <div class="park-details">
         <div class="details-top">
@@ -193,8 +199,9 @@ body {
         border-radius: 1%;
         overflow: hidden;
         position: absolute;
-        top: 200px;
-        left: 5%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 2;
 }
 
@@ -274,5 +281,11 @@ body {
         #prev-next {
                 margin-left: 40px;
                 margin-right: 40px;
+        }
+
+        .park-details {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
         }
 }
