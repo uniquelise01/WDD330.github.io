@@ -68,7 +68,6 @@ function showShips(url = "https://swapi.dev/api/starships/") {
                 }
                 if (data.previous) {
                         const prev = document.getElementById("prev");
-
                         prev.onclick = () => {
                                 showShips(data.previous);
                         };
