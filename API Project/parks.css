@@ -198,7 +198,7 @@ body {
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         border-radius: 1%;
         overflow: hidden;
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -227,8 +227,12 @@ body {
         width: auto;
 }
 
+.park-picture:hover {
+        z-index: 0;
+}
+
 .fine-details {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.8);
         padding: 5px 15px;
         margin: 30px;
         border-radius: 1%;
@@ -242,13 +246,13 @@ body {
 
 .caption {
         font-size: 0.75em;
-        text-align: center;
-        padding: 0 0 10px 0;
-        color: white;
-        position: absolute;
+        text-align: justify;
+        padding: 0 15px;
+        color: black;
+        /* position: absolute;
         bottom: 0;
         left: 40px;
-        right: 40px;
+        right: 40px; */
 }
 
 

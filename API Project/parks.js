@@ -1,3 +1,4 @@
+//import favorites.js
 
 export class nationalParks {
         constructor(parkInfo, parksId, detailsId) {
@@ -14,17 +15,6 @@ export class nationalParks {
                 this.parkEvents();
         }
 
-        parkEvents() {
-                const parkBtns = this.parkDiv.lastChild.childNodes[3];
-
-                //details button
-                parkBtns.childNodes[1].addEventListener('click', e => {
-                        this.showParkDetails(e.target);
-                })
-
-                //favorite button
-        }
-
         showParkDetails() {
                 let fullName = this.parkInfo.fullName;
                 let desc = this.parkInfo.description;
@@ -37,6 +27,27 @@ export class nationalParks {
                 let caption = this.parkInfo.images[0].caption;
 
                 this.detailsDiv.appendChild(renderParkDetails(fullName, image, alt, desc, state, price, number, weblink, caption));
+
+                this.detailEvents();
+        }
+
+        parkEvents() {
+                const parkBtns = this.parkDiv.lastChild.childNodes[3];
+
+                //details button
+                parkBtns.childNodes[1].addEventListener('click', e => {
+                        this.showParkDetails(e.target);
+                })
+
+                //favorite button
+        }
+
+        detailEvents() {
+                const closeDetailsBtn = this.detailsDiv.lastChild.childNodes[0].childNodes[3];
+
+                closeDetailsBtn.addEventListener('click', e => {
+                        this.detailsDiv.removeChild(this.detailsDiv.lastChild);
+                })
         }
 
 }
