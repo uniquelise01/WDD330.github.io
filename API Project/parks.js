@@ -1,4 +1,4 @@
-//import favorites.js
+import {favorites} from "./favorites.js"
 
 export class nationalParks {
         constructor(parkInfo, parksId, detailsId) {
@@ -13,6 +13,8 @@ export class nationalParks {
                 this.parkDiv.appendChild(renderParkList(fullName));
 
                 this.parkEvents();
+
+                this.renderFavorites();
         }
 
         showParkDetails() {
@@ -31,7 +33,23 @@ export class nationalParks {
                 this.detailEvents();
         }
 
+        renderFavorites() {
+                let fullName = this.parkInfo.fullName;
+                let favClass = new favorites();
+                let favList = favClass.getFavs("myFavs");
+                console.log(favList);
+
+                favList.forEach(child => {
+                        if (child.name == fullName) {
+                                switchHeart(fullName);
+                        }
+                })
+
+        }
+
         parkEvents() {
+                let parkName = this.parkInfo.fullName;
+
                 const parkBtns = this.parkDiv.lastChild.childNodes[3];
 
                 //details button
@@ -40,6 +58,9 @@ export class nationalParks {
                 })
 
                 //favorite button
+                parkBtns.childNodes[3].addEventListener("click", e => {
+                        switchHeart(parkName);
+                })
         }
 
         detailEvents() {
@@ -62,7 +83,7 @@ function renderParkList(name) {
                         <button class="detail-btn">Details</button>
                         <button class="favorite-heart">
                                 <img src="../images/heart.png" alt="empty heart" class="empty-heart">
-                                <img src="../images/heart (1).png" alt="full heart" class="full-heart">
+                                <img src="../images/heart (1).png" alt="full heart" class="full-heart" id="${name}_id">
                         </button>
                 </div>`;
         return item;
@@ -87,4 +108,22 @@ function renderParkDetails(name, image, alt, description, state, price, number, 
                 </div>
                 <p class="caption">${imageCap}</p>`
         return item;
+}
+
+function switchHeart(name) {
+        let favClass = new favorites(name);
+
+        const heart = document.getElementById(name + '_id');
+        const style = getComputedStyle(heart);
+        const heartDisplay = style.display;
+
+        if (heartDisplay === "flex") {
+                heart.style.display = "none";
+
+                favClass.removeFromFavs();
+        } else {
+                heart.style.display = "flex";
+
+                favClass.addToFavs();
+        }
 }

@@ -141,10 +141,6 @@ body {
         /* remove the hidden class for now to display a red heart */
 }
 
-.favorite-heart:hover .full-heart{
-        display: flex;
-}
-
 /***********************************************************/
 /* Prev & Next buttons */
 #prev-next {
@@ -224,11 +220,7 @@ body {
 
 .park-picture {
         height: 400px;
-        width: auto;
-}
-
-.park-picture:hover {
-        z-index: 0;
+        min-width: 450px;
 }
 
 .fine-details {

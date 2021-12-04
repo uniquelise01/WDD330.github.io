@@ -23,8 +23,6 @@ function showParks(url) {
         fetchAPI(url).then(function (data) {
                 const results = data.data;
 
-                console.log(results[49]);
-
                 results.forEach(addPark)
         })
 }
