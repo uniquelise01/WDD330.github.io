@@ -41,7 +41,7 @@ export class nationalParks {
 
                 favList.forEach(child => {
                         if (child.name == fullName) {
-                                switchHeart(fullName);
+                                reload(fullName);
                         }
                 })
 
@@ -126,4 +126,12 @@ function switchHeart(name) {
 
                 favClass.addToFavs();
         }
+}
+
+function reload(name) {
+        const heart = document.getElementById(name + '_id');
+        const style = getComputedStyle(heart);
+        const heartDisplay = style.display;
+
+        heart.style.display = "flex";
 }

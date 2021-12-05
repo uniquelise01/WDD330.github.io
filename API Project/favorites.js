@@ -17,25 +17,26 @@ export class favorites {
     getFavs(key) {
         let oldFavs = ls.get(key);
         console.log(oldFavs);
+
         return oldFavs;
     }
 
     addToFavs() {
-        favArray.push(this.newFav);
+        let oldFavs = this.getFavs("myFavs");
+        
+        oldFavs.push(this.newFav);
 
-        this.saveFav("myFavs", favArray)
-
-        console.log(favArray);
+        this.saveFav("myFavs", oldFavs)
     }
 
     removeFromFavs() {
-        const index = favArray.findIndex(element => element.name === this.parkName);
+        let oldFavs = this.getFavs("myFavs");
 
-        favArray.splice(index, 1);
+        const index = oldFavs.findIndex(element => element.name === this.parkName);
 
-        this.saveFav("myFavs", favArray)
+        oldFavs.splice(index, 1);
 
-        console.log(this.getFavs('myFavs'));
+        this.saveFav("myFavs", oldFavs)
     }
 }
 
