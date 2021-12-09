@@ -3,7 +3,6 @@ import {myStorage} from './ls.js';
 const ls = new myStorage();
 
 let favArray = [];
-ls.set("myFavs", favArray);
 
 export class favorites {
     constructor (parkName) {
