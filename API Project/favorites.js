@@ -24,7 +24,9 @@ export class favorites {
         
         oldFavs.push(this.newFav);
 
-        this.saveFav("myFavs", oldFavs)
+        favArray.push(oldFavs);
+
+        this.saveFav("myFavs", favArray)
     }
 
     removeFromFavs() {
