@@ -21,6 +21,9 @@ body {
         flex-direction: row;
         justify-content: space-evenly;
         background-color: #8BBEB2;
+        position: sticky;
+        top: 0;
+        z-index: 3;
 }
 
 .top-btn {
@@ -75,6 +78,13 @@ body {
         display: block;
 }
 
+#loading {
+        text-align: center;
+        margin: 50px;
+        font-size: 1.5em;
+        font-style: italic;
+}
+
 
 /***********************************************************/
 /* CSS for API parks list */
@@ -99,6 +109,10 @@ body {
         padding: 0 20px;
         background-color: #EAEBED;
         margin: 5px;
+}
+
+.park-list-item:hover {
+        background-color: rgb(206, 206, 206);
 }
 
 .park-list-btns {
@@ -147,11 +161,16 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        position: sticky;
+        bottom: 0;
+        background-color: white;
+        z-index: 3;
+        margin: 0;
 }
 
 .bottom-btn {
         font-family: 'Lato', sans-serif;
-        margin: 20px;
+        padding: 20px;
         border: none;
         background-color: transparent;
 }
@@ -198,7 +217,7 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 2;
+        z-index: 3;
 }
 
 .details-top {
@@ -275,8 +294,8 @@ body {
         }
 
         #prev-next {
-                margin-left: 40px;
-                margin-right: 40px;
+                padding-left: 40px;
+                padding-right: 40px;
         }
 
         .park-details {

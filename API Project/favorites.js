@@ -16,8 +16,6 @@ export class favorites {
 
     getFavs(key) {
         let oldFavs = ls.get(key);
-        console.log(oldFavs);
-
         return oldFavs;
     }
 

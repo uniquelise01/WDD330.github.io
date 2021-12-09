@@ -37,14 +37,12 @@ export class nationalParks {
                 let fullName = this.parkInfo.fullName;
                 let favClass = new favorites();
                 let favList = favClass.getFavs("myFavs");
-                console.log(favList);
 
                 favList.forEach(child => {
                         if (child.name == fullName) {
                                 reload(fullName);
                         }
                 })
-
         }
 
         parkEvents() {
@@ -76,7 +74,7 @@ export class nationalParks {
 function renderParkList(name) {
         const item = document.createElement("div");
         item.classList.add('park-list-item');
-        //item.id = `${id}_example`;
+        item.id = `${name}`;
         item.innerHTML = `
                 <p>${name}</p>
                 <div class="park-list-btns">
@@ -131,7 +129,6 @@ function switchHeart(name) {
 function reload(name) {
         const heart = document.getElementById(name + '_id');
         const style = getComputedStyle(heart);
-        const heartDisplay = style.display;
 
         heart.style.display = "flex";
 }
