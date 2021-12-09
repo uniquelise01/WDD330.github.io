@@ -229,6 +229,10 @@ body {
         font-family: 'DM Serif Display', serif;
 }
 
+.details-top h3 {
+        margin-right: 7px;
+}
+
 .exit-btn {
         height: 40px;
 }
@@ -260,10 +264,20 @@ body {
         text-align: justify;
         padding: 0 15px;
         color: black;
-        /* position: absolute;
-        bottom: 0;
-        left: 40px;
-        right: 40px; */
+}
+
+.error {
+        background-color: white;
+        min-width: 300px;
+        width: 90%;
+        min-height: 100px;
+        padding: 5px 15px;
+        margin: 0 auto 15px auto;
+        border-radius: 1%;
+}
+
+.error p {
+        margin: 15px;
 }
 
 

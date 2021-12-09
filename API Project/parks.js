@@ -18,19 +18,28 @@ export class nationalParks {
         }
 
         showParkDetails() {
-                let fullName = this.parkInfo.fullName;
-                let desc = this.parkInfo.description;
-                let state = this.parkInfo.states;
-                let price = this.parkInfo.entranceFees[0].cost;
-                let number = this.parkInfo.contacts.phoneNumbers[0].phoneNumber;
-                let weblink = this.parkInfo.url;
-                let image = this.parkInfo.images[0].url;
-                let alt = this.parkInfo.images[0].altText;
-                let caption = this.parkInfo.images[0].caption;
+                if (typeof this.parkInfo.entranceFees[0] === 'undefined' || typeof this.parkInfo.contacts.phoneNumbers[0] === 'undefined') {
+                        let fullName = this.parkInfo.fullName;
+                        let weblink = this.parkInfo.url;
 
-                this.detailsDiv.appendChild(renderParkDetails(fullName, image, alt, desc, state, price, number, weblink, caption));
+                        this.detailsDiv.appendChild(renderErrorMessage(fullName, weblink));
 
-                this.detailEvents();
+                        this.detailEvents();
+                } else {
+                        let fullName = this.parkInfo.fullName;
+                        let desc = this.parkInfo.description;
+                        let state = this.parkInfo.states;
+                        let price = this.parkInfo.entranceFees[0].cost;
+                        let number = this.parkInfo.contacts.phoneNumbers[0].phoneNumber;
+                        let weblink = this.parkInfo.url;
+                        let image = this.parkInfo.images[0].url;
+                        let alt = this.parkInfo.images[0].altText;
+                        let caption = this.parkInfo.images[0].caption;
+
+                        this.detailsDiv.appendChild(renderParkDetails(fullName, image, alt, desc, state, price, number, weblink, caption));
+
+                        this.detailEvents();
+                }
         }
 
         renderFavorites() {
@@ -105,6 +114,21 @@ function renderParkDetails(name, image, alt, description, state, price, number, 
                         <p><strong>Website:</strong> <a href=${weblink}>${weblink}</a></p>
                 </div>
                 <p class="caption">${imageCap}</p>`
+        return item;
+}
+
+function renderErrorMessage(name, website) {
+        const item = document.createElement("div");
+        item.classList.add('park-details');
+        item.innerHTML = 
+                `<div class="details-top">
+                        <h3>${name}</h3>
+                        <img src="../images/cross.png" alt="x icon" class="exit-btn">
+                </div>
+                
+                <div class="error">
+                        <p>Sorry, it appears that there was an error accessing this park information from the National Parks API. You can visit <a href="${website}">this link</a> for information about ${name}.</p>
+                </div>`
         return item;
 }
 

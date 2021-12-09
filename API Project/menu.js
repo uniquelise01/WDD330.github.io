@@ -19,7 +19,6 @@ export class menuButtons {
             favList.forEach(favorite => {
                 if (parkName == favorite.name) {
                     favParks.push(child);
-                    console.log(favParks);
                 }
             })
         })
