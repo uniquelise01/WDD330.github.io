@@ -2,8 +2,6 @@ import {myStorage} from './ls.js';
 
 const ls = new myStorage();
 
-//let favArray = [];
-
 export class favorites {
     constructor (parkName) {
         this.parkName = parkName;
@@ -27,8 +25,6 @@ export class favorites {
         let oldFavs = this.getFavs("myFavs");
         
         oldFavs.push(this.newFav);
-
-        //favArray.push(oldFavs);
 
         this.saveFav("myFavs", oldFavs)
     }

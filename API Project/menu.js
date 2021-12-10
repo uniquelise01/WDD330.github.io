@@ -29,6 +29,21 @@ export class menuButtons {
         let parkArray = getResponse();
         renderAll(parkArray);
     }
+
+    filterByState(stateAbrv) {
+        let parkArray = getResponse();
+        const selectedState = [];
+
+        parkArray.forEach(child => {
+            const parkState = child.states;            
+            let regex = new RegExp(stateAbrv);
+
+            if (regex.test(parkState)) {
+                selectedState.push(child);
+            }
+        })
+        renderSelected(selectedState);
+    }
 }
 
 function renderSelected(parks) {

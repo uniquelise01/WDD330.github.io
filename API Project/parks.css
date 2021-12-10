@@ -56,6 +56,8 @@ body {
         min-width: 5em;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        max-height: 300px;
+        overflow: auto;
 }
 
 /* Remember to change this p when you decide what html tag to use in the menu */
@@ -111,10 +113,6 @@ body {
         margin: 5px;
 }
 
-.park-list-item:hover {
-        background-color: rgb(206, 206, 206);
-}
-
 .park-list-btns {
         display: flex;
         flex-direction: row;
@@ -127,11 +125,6 @@ body {
         font-family: 'Lato', sans-serif;
         margin: 0 10px;        
         text-decoration: underline;
-}
-
-.park-list-btns button:hover {
-        cursor: pointer;
-        font-weight: 700;
 }
 
 .park-list-item img {
@@ -177,11 +170,6 @@ body {
 
 .bottom-btn img {
         width: 10px;
-}
-
-.bottom-btn:hover {
-        cursor: pointer;
-        font-weight: 700;
 }
 
 
@@ -307,6 +295,15 @@ body {
                 margin: 5px auto;
         }
 
+        .park-list-item:hover {
+                background-color: rgb(206, 206, 206);
+        }
+
+        .park-list-btns button:hover {
+                cursor: pointer;
+                font-weight: 700;
+        }
+
         #prev-next {
                 padding-left: 40px;
                 padding-right: 40px;
@@ -316,5 +313,10 @@ body {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+        }
+
+        .bottom-btn:hover {
+                cursor: pointer;
+                font-weight: 700;
         }
 }

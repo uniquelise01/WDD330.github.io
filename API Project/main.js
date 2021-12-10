@@ -97,9 +97,17 @@ allParks.addEventListener('click', e => {
         document.getElementById("prev-next").style.display = 'flex';
 })
 
-//filter button
-/////////////
+//filter by state button
+const filterBtn = document.getElementById("filter-content");
+const filterArray = Array.from(filterBtn.children);
+filterArray.forEach(child => {
+        child.addEventListener("click", e => {
+                let stateAbrv = child.innerHTML;
+                menuEvents.filterByState(stateAbrv);
 
+                document.getElementById("prev-next").style.display = 'none';
+        })
+})
 
 
 
