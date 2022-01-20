@@ -60,7 +60,6 @@ body {
         overflow: auto;
 }
 
-/* Remember to change this p when you decide what html tag to use in the menu */
 .filter-content p {
         color: black;
         padding: 5px 10px;
