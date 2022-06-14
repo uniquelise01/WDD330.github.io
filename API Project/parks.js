@@ -105,7 +105,7 @@ function renderParkDetails(name, image, alt, description, state, price, number, 
                         <img src="../images/cross.png" alt="x icon" class="exit-btn">
                 </div>
                 
-                <img src="${image}" alt=${alt} class="park-picture">
+                <img src="${image}" alt="${alt}" class="park-picture">                
                 <div class="fine-details">
                         <p>${description}</p>
                         <p><strong>State:</strong> ${state}</p>

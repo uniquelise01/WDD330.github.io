@@ -193,12 +193,13 @@ body {
         <p class="caption">API image caption</p>
 </div>
 */
+
 .park-details {
         max-width: 90%;
         margin: auto;
         background: white;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-radius: 1%;
+        box-shadow: 8px 8px 16px 5px rgba(0,0,0,0.2);
+        border-radius: 5px;
         overflow: hidden;
         position: fixed;
         top: 50%;
@@ -228,18 +229,25 @@ body {
         cursor: pointer;
 }
 
-.park-picture {
+.park-picture{
         height: 400px;
-        min-width: 450px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
 }
 
 .fine-details {
         background-color: rgba(255, 255, 255, 0.8);
-        padding: 5px 15px;
-        margin: 30px;
-        border-radius: 1%;
+        padding: 20px;
+        margin: 30px auto 0 auto;
         position: absolute;
-        top: 100px;;
+        bottom: 50px;
+        max-width: 100%;
+        transition: 1s;
+}
+
+.park-picture:hover + .fine-details{
+        opacity: 0;
 }
 
 .fine-details p {
